@@ -1,0 +1,15 @@
+
+    {
+        "clear sky": "./iconos/1.svg",
+        "few clouds": "./iconos/2.svg",
+        "scattered clouds": "./iconos/3.svg",
+        "broken clouds": "./iconos/4.svg",
+        "shower rain": "./iconos/5.svg",
+        "rain": "./iconos/6.svg",
+        "thunderstorm": "./iconos/7.svg",
+        "show": "./iconos/8.svg",
+        "mist": "./iconos/9.svg",
+        "haze": "./iconos/2.svg",
+        "overcast clouds": "./iconos/3.svg"
+    } 
+

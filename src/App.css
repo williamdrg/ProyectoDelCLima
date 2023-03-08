@@ -1,0 +1,430 @@
+:root {
+  --color-backgroundDay: radial-gradient(circle, rgba(213,243,255,1) 0%, rgba(81,132,232,1) 100%);
+  --color-backgroundDark: radial-gradient(circle, rgba(83,56,143,1) 0%, rgba(47,41,88,1) 100%);
+  --color-cardDay: radial-gradient(circle, rgba(229,242,255,1) 0%, rgba(213,243,255,1) 100%);
+  --color-cardDark: radial-gradient(circle, rgba(88,54,179,1) 0%, rgba(89,54,180,1) 0.01%, rgba(54,42,132,1) 100%);
+
+  --color-font: white;
+}
+
+
+.App {
+  background: var(--color-backgroundDay);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#026EED;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  margin: 30px 0px 0px 40px;
+}
+
+.ContainerBackgroound {
+  background: var(--color-cardDay);
+  clip-path: polygon(0 -3%, 130% 35%, 100% 100%, 0% 150%);
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  border-radius: 30px;
+  box-shadow: 0px 5px 6px #332f2c91;
+  border-start-end-radius: 140px;
+}
+
+.containerCard {
+  
+  border-radius: 30px;
+  width: 500px;
+  height: 300px;
+  padding: 10px;
+  padding-left: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
+  z-index: 1;
+  position: relative;
+  
+}
+
+
+.temperature {
+  font-size: 75px;
+}
+
+.symbol {
+  font-size: 30px;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.city {
+  font-size: 23px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 30px;
+  
+}
+
+.description {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 30px 25px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.dataClimate {
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+.containerImg {
+  width: 50%;
+  z-index: 10;
+  margin-left: 80px;
+  position: absolute;
+  top: -80px;
+  right: 0;
+}
+
+.containerImg img {
+  width: 100%;
+}
+
+.darkTheme {
+  background: var(--color-backgroundDark);
+  color: var(--color-font);
+}
+
+.cardDarkTheme {
+  background: var(--color-cardDark);
+}
+
+.btnChange {
+  width: 178px;
+  height: 38px;
+  background-color: #38A0D8;
+  border: none;
+  border-radius: 4.85px;
+  offset: 0px, 4.85px;
+  box-shadow: 0px 4.85px 4.85px rgba(0, 0, 0, 0.25);
+  align-self: flex-end; 
+  position: absolute;
+  margin-bottom: 150px;
+}
+
+.btnDark {
+  color: var(--color-font);
+  background-color: #7d69f1;
+}
+
+.search {
+  position: absolute;
+  top: 0;
+  margin-top: 100px;
+
+}
+
+.mover {
+  position: absolute;
+  left: 0;
+}
+
+
+/* Cambio de modo */
+
+.containerSwitch {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 40px;
+  margin-right: 60px;
+}
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Casilla de verificación Ocultar HTML por defecto */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* deslizador */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: .5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: .5s;
+}
+
+input:checked + .slider {
+  background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+
+/* boton de busqueda */
+.input {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+}
+
+.input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+
+.btn__search {
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  /* color: #fff; */
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 10px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  margin-left: 20px;
+}
+
+.btn__search:before {
+  background-color: initial;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  width: 92%;
+}
+
+.btn__search:hover {
+  -webkit-box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+ 
+
+/* loader */
+.loader__container {
+  background-color: #026EED;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 11;
+
+}
+
+.loader__container img {
+  width: 300px;
+}
+
+
+.loader {
+  --ballcolor: #f2f2f2;
+  --shadow: 0px 0 #ffffff00;
+  --shadowcolor: #ffffff00;
+  width: 10px;
+  height: 10px;
+  left: -120px;
+  border-radius: 50%;
+  position: relative;
+  color: var(--ballcolor);
+  animation: shadowRolling 2s linear infinite;
+}
+
+@keyframes shadowRolling {
+  
+  0% {
+    box-shadow: var(--shadow),
+        var(--shadow),
+        var(--shadow),
+        var(--shadow);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--ballcolor),
+        var(--shadow),
+        var(--shadow), 
+        var(--shadow);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--ballcolor),
+        100px 0 var(--ballcolor),
+        var(--shadow), 
+        var(--shadow);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--ballcolor), 
+        110px 0 var(--ballcolor), 
+        100px 0 var(--ballcolor), 
+         var(--shadow);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--ballcolor),
+        120px 0 var(--ballcolor),
+        110px 0 var(--ballcolor),
+        100px 0 var(--ballcolor);
+  }
+
+  62% {
+    box-shadow: 200px 0 var(--shadowcolor),
+         130px 0 var(--ballcolor), 
+         120px 0 var(--ballcolor), 
+         110px 0 var(--ballcolor);
+  }
+
+  75% {
+    box-shadow: 200px 0 var(--shadowcolor),
+        200px 0 var(--shadowcolor),
+        130px 0 var(--ballcolor), 
+        120px 0 var(--ballcolor);
+  }
+
+  87% {
+    box-shadow: 200px 0 var(--shadowcolor), 
+        200px 0 var(--shadowcolor), 
+        200px 0 var(--shadowcolor), 
+        130px 0 var(--ballcolor);
+  }
+
+  100% {
+    box-shadow: 200px 0 var(--shadowcolor), 
+        200px 0 var(--shadowcolor),
+        200px 0 var(--shadowcolor),
+        200px 0 var(--shadowcolor);
+  }
+}
+
+/* dispositivo mobil */
+
+@media screen and (max-width: 425px) {
+
+  .ContainerBackgroound {
+    max-width: 300px;
+    height: 220px;
+    padding: 10px;
+    margin: 0 15px;
+  }
+  
+  .containerCard {
+    max-width: 300px;
+    height: 220px;
+    margin: 0 15px;
+  }
+
+  .city {
+    font-size: 18px;
+    position: absolute;
+    bottom: -10px;
+  }
+
+  .temperature {
+    font-size: 60px;
+  }
+
+  .description {
+    position: absolute;
+    bottom: -10px;
+    right: -12px;
+    font-weight: 500;
+    font-size: 12px;
+
+  }
+
+  .containerImg {
+    width: 40%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 22px;
+  }
+
+  .switch {
+    font-size: 14px;
+    position: absolute;
+    top: -10px;
+  }
+
+  .dataClimate {
+    font-size: 14px;
+    margin-top: 25px;
+  }
+}
