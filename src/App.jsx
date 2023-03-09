@@ -19,10 +19,11 @@ function App() {
       const long = position.coords.longitude
 
       const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=3fb11a0079cd98b2e305f5727e30d0a1&units=metric`
-      
+    
           axios
               .get(URL)
               .then(resp => {
+                console.log(resp.data.weather?.[0].description)
                 setWeatherData(resp.data)
                 setTimeout(() => {
                   setLoading(false)

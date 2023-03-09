@@ -10,6 +10,10 @@
         "show": "./iconos/8.svg",
         "mist": "./iconos/9.svg",
         "haze": "./iconos/2.svg",
-        "overcast clouds": "./iconos/3.svg"
+        "overcast clouds": "./iconos/3.svg",
+        "light rain": "./iconos/6.svg",
+        "fog": "./iconos/3.svg",
+        "light intensity drizzle": "./iconos/6.svg"
+
     } 
 
