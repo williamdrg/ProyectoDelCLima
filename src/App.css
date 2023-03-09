@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   color:#026EED;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  font-family: lato
 }
 
 .title {
@@ -35,7 +35,9 @@
   position: absolute;
   border-radius: 30px;
   box-shadow: 0px 5px 6px #332f2c91;
-  border-start-end-radius: 140px;
+  border-start-end-radius:  140px;
+  /* clip-path: inset(-10px round 40px 40px 30px 10px); */
+  
 }
 
 .containerCard {
@@ -86,12 +88,16 @@
   margin-top: 25px;
 }
 
+.spanData {
+  font-weight: 600;
+}
+
 .containerImg {
   width: 50%;
   z-index: 10;
   margin-left: 80px;
   position: absolute;
-  top: -80px;
+  top: -60px;
   right: 0;
 }
 

@@ -18,8 +18,7 @@ function App() {
       const lat = position.coords.latitude
       const long = position.coords.longitude
 
-      const API_Key = '3fb11a0079cd98b2e305f5727e30d0a1'
-      const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_Key}&units=metric`
+      const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=3fb11a0079cd98b2e305f5727e30d0a1&units=metric`
       
           axios
               .get(URL)
@@ -34,11 +33,7 @@ function App() {
     })
   }, [])
 
-  // &lang=es
 
-
-
-  
   const [darkTheme, setDarkTheme] = useState(true)
 
   const funcionDarkTheme = darkTheme ? 'App' : 'App darkTheme'
@@ -50,7 +45,8 @@ function App() {
   return (
     <div className={funcionDarkTheme}>
      {loading && <Loader/>}
-      {/* <Search /> */}
+      <Search
+      data = {setWeatherData} />
       <h1 className='title'>Weather app</h1>
        <div className='containerSwitch'>
         <label className="switch">
@@ -63,8 +59,11 @@ function App() {
       data = {weatherData}
       icon = {clima[weatherData.weather?.[0].description]}
       btn = {changeFarenheit}
+
       />
-        <button className={btnDark}  onClick={()=> setChangeFarenheit(!changeFarenheit)}>Cambiar Temperatura</button>
+        <button className={btnDark}  onClick={()=> setChangeFarenheit(!changeFarenheit)}>
+          {changeFarenheit ? 'Cambiar a F°' : 'Cambiar a °C'}
+        </button>
     </div>
   )
 }
