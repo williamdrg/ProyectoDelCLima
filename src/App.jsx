@@ -23,7 +23,6 @@ function App() {
           axios
               .get(URL)
               .then(resp => {
-                console.log(resp.data.weather?.[0].description)
                 setWeatherData(resp.data)
                 setTimeout(() => {
                   setLoading(false)
@@ -43,11 +42,16 @@ function App() {
 
   const [changeFarenheit, setChangeFarenheit] = useState(true)
 
+  const [modal, setModal] = useState(false);
+
+
   return (
     <div className={funcionDarkTheme}>
      {loading && <Loader/>}
       <Search
-      data = {setWeatherData} />
+      data = {setWeatherData} 
+      messageModal = {()=> setModal(!modal)}
+      />
       <h1 className='title'>Weather app</h1>
        <div className='containerSwitch'>
         <label className="switch">
@@ -65,6 +69,13 @@ function App() {
         <button className={btnDark}  onClick={()=> setChangeFarenheit(!changeFarenheit)}>
           {changeFarenheit ? 'Cambiar a F°' : 'Cambiar a °C'}
         </button>
+        <div className={modal ? "container__modal" : "close__modal"}>
+                <div className="modal">
+                    <div className='modalImg'><img src="advertencia.png" alt="warning image" /></div>
+                    <p>La ciudad que estás buscando puede que no se encuentre en nuestra base de datos o no exista.</p>
+                    <button className='custom-btn btn-1' onClick={() => setModal(!modal)}>Cerrar</button>
+                </div>
+            </div>
     </div>
   )
 }
